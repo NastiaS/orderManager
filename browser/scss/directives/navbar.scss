@@ -1,0 +1,58 @@
+navbar {
+
+  sloth-logo {
+    img{
+    padding-top: 10px;
+    margin-right: 20px;
+    width: 30px;
+    }
+  }
+
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+
+  .nav > li > a {
+    cursor: pointer;
+    &.active {
+      color: #f30046;
+    }
+    &:hover {
+      transition: color 0.2s;
+    }
+    &:focus {
+      color: white;
+      background: transparent;
+    }
+  }
+
+  .nav > li > a.active {
+    color: #eee;
+  }
+
+  .login-button {
+    float: right;
+    margin-top: 8px;
+    background-color: #eee;
+  }
+
+  .welcome {
+    float: right;
+    margin-top: 12px;
+    span {
+      color: white;
+    }
+    a {
+      color: #eee;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.navbar{
+  margin-bottom: 0;
+}

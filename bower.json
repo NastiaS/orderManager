@@ -1,0 +1,19 @@
+{
+  "name": "generated",
+  "version": "2.5.2",
+  "homepage": "https://github.com/FullstackAcademy/fsg",
+  "authors": [
+    "NastiaS <anastasiasergienko@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-table": "~0.5.4"
+  }
+}

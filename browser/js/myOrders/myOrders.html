@@ -1,0 +1,51 @@
+<div id="myOrders" ng-controller="MyOrdersCtrl">
+   <div>
+      <h1 class="allOrders">My Orders:</h1>
+      <table class="table" ng-table>
+         <tr ng-repeat="order in orders">
+            <td class="columnName" data-title="'Item Id'">{{order.itemId}}</td>
+            <td class="columnName" data-title="'Item Name'">{{order.itemName}}</td>
+            <td class="columnName" data-title="'Customer'">{{order.customer}}</td>
+            <td class="columnName" data-title="'Quantity Ordered'">{{order.quantity}}</td>
+            <td class="columnName" data-title="'Order Status'">{{order.status}}</td>
+            <td class="columnName" data-title="'Actions'"><i class="fa fa-trash-o" ng-click="deleteOrder(order._id)"></i><i class="fa fa-pencil"ng-click="toggleOrderForm(order)"></i></td>
+         </tr>
+      </table>
+   </div>
+   <div>
+      <button ng-if="!showForm" ng-click="toggleOrderForm()"
+         type="button" class="btn btn-default btn-lg btn-block">Add Order
+      </button>
+      <button ng-if="showForm" ng-click="toggleOrderForm()"
+         type="button" class="btn btn-default btn-lg btn-block">Close
+      </button>
+   </div>
+   <div ng-if="showForm">
+      <div class="container">
+         <form id="newOrder-form" name="newOrderForm">
+            <div class="form-group">
+               <label for="itemId">ItemId</label>
+               <input name="itemId" type="text" ng-model="futureOrder.itemId" class="form-control" id="itemId" placeholder="Enter Item ID">
+            </div>
+            <div class="form-group">
+               <label for="itemName">Item Name</label>
+               <input name="itemName" type="text" ng-model="futureOrder.itemName" class="form-control" id="itemName" placeholder="Enter Item Name">
+            </div>
+            <div class="form-group">
+               <label for="customer">Customer</label>
+               <input name="customer" type="text" ng-model="futureOrder.customer" class="form-control" id="customer" placeholder="Enter Customer's Name">
+            </div>
+            <div class="form-group">
+               <label for="quantity">Quantity ordered</label>
+               <input name="quantity" type="text" ng-model="futureOrder.quantity" class="form-control" id="quantity" placeholder="Enter quantity ordered">
+            </div>
+            <div class="form-group">
+               <label for="status">Enter Status</label>
+               <input name="status" type="text" ng-model="futureOrder.status" class="form-control" id="status" placeholder="Status of Order">
+            </div>
+            <button ng-if="!editing" type="submit" class="btn btn-default" ng-click="addOrder()">Submit</button>
+            <button ng-if="editing" type="submit" class="btn btn-default" ng-click="updateOrder(futureOrder._id, futureOrder)">Update</button>
+         </form>
+      </div>
+   </div>
+</div>
